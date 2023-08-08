@@ -1,0 +1,76 @@
+body {
+    font-family: "Courier New", monospace;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Display as a column layout */
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.terminal-window {
+    background-color: transparent;
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 10px;
+    width: 98%; /* Fixed at 100% of the device width */
+    height: 100%; /* Cover 100% of the tab */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column; /* Display as a column layout */
+    color: green;
+}
+
+.terminal-header {
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 0;
+    flex: 5%; /* 5% of the height for header */
+}
+
+.terminal-output {
+    overflow-y: auto;
+    max-height: 45%; /* 45% of the height for output */
+    margin: 0 10px;
+    white-space: pre-line;
+    text-align: left;
+    max-width: calc(100% - 20px);
+
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    scrollbar-color: green transparent;
+}
+
+/* Webkit-based browsers (Chrome, Safari) */
+.terminal-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 3px;
+}
+
+/* Firefox */
+.terminal-output {
+    scrollbar-width: thin;
+    scrollbar-color: green transparent;
+}
+
+.terminal-input {
+    width: 98%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    padding: 10px;
+    border-top: 2px solid green;
+    font-family: inherit;
+    font-size: inherit;
+    resize: vertical; /* Allow vertical resizing */
+    flex: 1; /* Rest of the height for input */
+}
